@@ -11,7 +11,7 @@ const Home = (props) => {
   const render = ({item}) => {
     const id = item.idMeal
     return(
-      <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Details')}>
+      <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Details', {id})}>
       <View style={styles.container}>
         <Image style={styles.image} source={{uri:item.strMealThumb}} />
         <Text numberOfLines={1} style={styles.text} >{item.strMeal}</Text>
