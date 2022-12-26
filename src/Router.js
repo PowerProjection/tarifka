@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 const Router = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={styles.nav}>
         <Stack.Screen name="Categories" component={CategoryScreen} />
         <Stack.Screen name="Meal" component={MealScreen} />
         <Stack.Screen name="Details" component={DetailScreen} />
@@ -23,4 +23,4 @@ const Router = () => {
 
 export default Router
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({nav:{headerTitleAlign:'center', headerTintColor:'orange'},})

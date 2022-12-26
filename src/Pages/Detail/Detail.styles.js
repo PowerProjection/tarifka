@@ -16,7 +16,9 @@ export default styles = StyleSheet.create({
     },
     lineBorder:{
       borderBottomWidth:1,
-      marginBottom:5,marginTop:5
+      marginBottom:5,
+      marginTop:5,
+      borderColor:'#c4c4c4'
     },
     title:{
       fontSize:26,
