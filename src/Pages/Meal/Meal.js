@@ -2,10 +2,11 @@ import { FlatList, Text, View, Image, TouchableWithoutFeedback } from 'react-nat
 import React from 'react'
 import useFetch from '../../customHooks/useFetch/useFetch'
 import styles from './Meal.styles'
+import Config from 'react-native-config'
 
 const Home = (props) => {
   const categoryName = props.route.params.categoryName
-  const URL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + categoryName
+  const URL = Config.REACT_APP_API_MEAL_URL + categoryName
   const {data} = useFetch(URL)
 
   const render = ({item}) => {

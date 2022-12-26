@@ -1,11 +1,14 @@
-import { Text, View, FlatList, Image, Button } from 'react-native'
+import { Text, View, FlatList, Image } from 'react-native'
 import React from 'react'
 import useFetch from '../../customHooks/useFetch/useFetch'
 import styles from './Detail.styles'
+import MyButton from "../../components/Button"
+import Config from 'react-native-config'
+
 
 const Detail = (props) => {
   const mealID = props.route.params.id
-  const URL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID
+  const URL = Config.REACT_APP_API_DETAIL_URL + mealID
   const {data} = useFetch(URL)
 
   const render = ({item}) => {
@@ -17,7 +20,7 @@ const Detail = (props) => {
         <Text style={styles.area}>{item.strArea}</Text>
         <View style={styles.lineBorder}></View>
         <Text style={styles.text} >{item.strInstructions}</Text>
-        <Button style={styles.button} color={'red'} title='Watch on Youtube' onPress={() => console.log("HEYYYY")} />
+        <MyButton text="Watch on Youtube" url={item.strYoutube} />
       </View>
     )
   }
